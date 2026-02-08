@@ -1,0 +1,9 @@
+# model & artifacts
+*.pkl
+*.joblib
+*.h5
+models/
+
+# data besar
+data/
+datasets/
