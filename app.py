@@ -104,17 +104,24 @@ if not TMDB_API_KEY:
 # =========================
 movies = pickle.load(open("movies.pkl", "rb"))
 
-if os.path.exists("similarity.pkl"):
-    similarity = pickle.load(open("similarity.pkl", "rb"))
-else:
-    st.info("Preparing recommendation engine...")
-    
+# =====================
+# SIMILARITY ENGINE
+# =====================
+st.info("Preparing recommendation engine...")
+
+@st.cache_data
+def build_similarity(movies):
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.metrics.pairwise import cosine_similarity
 
     tfidf = TfidfVectorizer(stop_words="english")
     tfidf_matrix = tfidf.fit_transform(movies["overview"].fillna(""))
-    similarity = cosine_similarity(tfidf_matrix)
+    return cosine_similarity(tfidf_matrix)
+
+if os.path.exists("similarity.pkl"):
+    similarity = pickle.load(open("similarity.pkl", "rb"))
+else:
+    similarity = build_similarity(movies)
 
 # =========================
 # FUNCTIONS
