@@ -4,6 +4,12 @@ A **Content-Based Movie Recommendation System** that suggests movies based on si
 
 ---
 
+## 🔗 Live Demo (Streamlit App)
+
+👉 [https://movierecommendationsystemtmdb.streamlit.app/]
+
+---
+
 ## 🚀 Application Overview
 
 The web application allows users to:
