@@ -107,7 +107,7 @@ movies = pickle.load(open("movies.pkl", "rb"))
 if os.path.exists("similarity.pkl"):
     similarity = pickle.load(open("similarity.pkl", "rb"))
 else:
-    st.warning("Similarity model not found. Generating similarity matrix...")
+    st.info("Preparing recommendation engine...")
     
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.metrics.pairwise import cosine_similarity
