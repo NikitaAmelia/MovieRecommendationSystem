@@ -103,5 +103,13 @@ streamlit run app.py
 
 ---
 
+## 👩‍💻 Author
 
-⭐ If you find this project interesting, feel free to give it a star!
+Nikita Amelia Valencia  
+Machine Learning & Data Science Enthusiast
+
+---
+
+## 📜 License
+
+This project is for educational and portfolio purposes.
